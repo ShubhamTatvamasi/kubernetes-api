@@ -70,5 +70,13 @@ curl "${HOST}/api/v1/namespaces/default/pods?labelSelector=\!mylabel"
 curl -s "${HOST}/api/v1/namespaces/default/pods?labelSelector=\!mylabel" | jq -r '.items[].metadata.name'
 ```
 
+Get pods with label `mylabel=foo`:
+```bash
+curl "${HOST}/api/v1/namespaces/default/pods?labelSelector=mylabel=foo"
+
+curl -s "${HOST}/api/v1/namespaces/default/pods?labelSelector=mylabel=foo" | jq -r '.items[].metadata.name'
+```
+
+
 
 
