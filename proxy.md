@@ -28,3 +28,9 @@ curl ${HOST}/api/v1/namespaces/default/pods \
   --data-binary @pod.yaml
 ```
 > Note: that the `-X POST` flag can be omitted because the `--data-binary` flag is being used.
+
+Get the pod details:
+```bash
+curl -X GET ${HOST}/api/v1/namespaces/default/pods/nginx
+```
+
