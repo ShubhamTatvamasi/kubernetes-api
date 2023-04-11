@@ -28,4 +28,4 @@ curl ${HOST}/api/v1/namespaces/project1/pods \
   -H "Content-Type: application/yaml" \
   --data-binary @pod.yaml
 ```
-> Note: that the `-X POST` flag can be omitted because the `--data-binary` flag is being used
+> Note: that the `-X POST` flag can be omitted because the `--data-binary` flag is being used.
