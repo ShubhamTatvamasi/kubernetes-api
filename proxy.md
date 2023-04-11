@@ -45,3 +45,18 @@ List all the pods in a namespace:
 curl -X GET ${HOST}/api/v1/namespaces/default/pods/
 ```
 
+---
+
+### Labels
+
+Create pods with labels:
+```bash
+kubectl run nginx1 --image nginx:alpine --labels mylabel=foo
+kubectl run nginx2 --image nginx:alpine --labels mylabel=bar
+```
+
+
+
+
+
+
