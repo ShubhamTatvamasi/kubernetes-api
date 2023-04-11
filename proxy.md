@@ -24,7 +24,7 @@ Deploy pod using API:
 ```bash
 HOST=http://127.0.0.1:8001
 
-curl ${HOST}/api/v1/namespaces/project1/pods \
+curl ${HOST}/api/v1/namespaces/default/pods \
   -H "Content-Type: application/yaml" \
   --data-binary @pod.yaml
 ```
