@@ -65,7 +65,7 @@ curl -s "${HOST}/api/v1/namespaces/default/pods?labelSelector=mylabel" | jq -r '
 
 Show all the pods without label `mylabel`:
 ```bash
-curl "${HOST}/api/v1/namespaces/default/pods?labelSelector=mylabel"
+curl "${HOST}/api/v1/namespaces/default/pods?labelSelector=\!mylabel"
 
 curl -s "${HOST}/api/v1/namespaces/default/pods?labelSelector=\!mylabel" | jq -r '.items[].metadata.name'
 ```
