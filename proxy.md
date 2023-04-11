@@ -3,6 +3,9 @@
 Start the kube proxy service:
 ```bash
 kubectl proxy
+
+# Set HOST variable in a new tab
+HOST=http://127.0.0.1:8001
 ```
 
 Create a pod file:
@@ -21,8 +24,6 @@ EOF
 
 Deploy pod using API:
 ```bash
-HOST=http://127.0.0.1:8001
-
 curl ${HOST}/api/v1/namespaces/default/pods \
   -H "Content-Type: application/yaml" \
   --data-binary @pod.yaml
@@ -53,6 +54,11 @@ Create pods with labels:
 ```bash
 kubectl run nginx1 --image nginx:alpine --labels mylabel=foo
 kubectl run nginx2 --image nginx:alpine --labels mylabel=bar
+```
+
+List all the pods with label `mylabel`:
+```bash
+curl "${HOST}/api/v1/namespaces/default/pods?labelSelector=mylabel"
 ```
 
 
