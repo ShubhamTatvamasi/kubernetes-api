@@ -84,4 +84,14 @@ curl "${HOST}/api/v1/namespaces/default/pods?labelSelector=mylabel\!=foo"
 curl -s "${HOST}/api/v1/namespaces/default/pods?labelSelector=mylabel\!=foo" | jq -r '.items[].metadata.name'
 ```
 
+select all with label `mylabel` and keys `foo` or `bar`:
+```bash
+curl -s "${HOST}/api/v1/namespaces/default/pods?labelSelector=mylabel+in+(foo,bar)" | jq -r '.items[].metadata.name'
+```
+
+select all without label `mylabel` and keys `foo` or `bar`:
+```bash
+curl -s "${HOST}/api/v1/namespaces/default/pods?labelSelector=mylabel+notin+(foo,bar)" | jq -r '.items[].metadata.name'
+```
+
 
