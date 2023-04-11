@@ -33,4 +33,15 @@ Get the pod details:
 ```bash
 curl -X GET ${HOST}/api/v1/namespaces/default/pods/nginx
 ```
+---
+
+List all the pods in a cluster:
+```bash
+curl -X GET ${HOST}/api/v1/pods
+```
+
+List all the pods in a namespace:
+```bash
+curl -X GET ${HOST}/api/v1/namespaces/default/pods/
+```
 
